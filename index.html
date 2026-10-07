@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Abdulloh — kelajakdagi frontend dasturchi portfoliosi"
+    />
+    <title>Abdulloh — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body id="top">
+    <header>
+      <nav>
+        <a href="#top" class="logo">abdulloh</a>
+        <ul>
+          <li><a href="#about">Men haqimda</a></li>
+          <li><a href="#family">Oilam</a></li>
+          <li><a href="#group">Guruhim</a></li>
+          <li><a href="#contact">Aloqa</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero-inner">
+          <div class="hero-text">
+            <p class="tag">Frontend dasturchi bo'lishga yo'lda</p>
+            <h1>Salom, men Abdulloh</h1>
+            <p class="lead">
+              Sayt yasashni va yangi g'oyalarni hayotga tatbiq etishni sevaman.
+            </p>
+            <div class="buttons">
+              <a class="btn primary" href="#about">Meni tanishtirish</a>
+              <a class="btn ghost" href="#group">Guruhim</a>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <span class="jersey" aria-hidden="true">8</span>
+            <img class="photo" src="abuuu.png" alt="Abdulloh" />
+            <svg class="sticker" viewBox="0 0 200 200" aria-hidden="true">
+              <defs>
+                <path
+                  id="circ"
+                  d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"
+                />
+              </defs>
+              <text>
+                <textPath href="#circ" textLength="470">
+                  67-maktab • 8-sinf • futbol • kod •
+                </textPath>
+              </text>
+              <text x="100" y="116" text-anchor="middle" class="sticker-ball">
+                ⚽
+              </text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>HTML</span><span>⚽</span><span>CSS</span><span>🚀</span
+          ><span>JavaScript</span><span>⚽</span><span>Frontend</span
+          ><span>🚀</span> <span>HTML</span><span>⚽</span><span>CSS</span
+          ><span>🚀</span><span>JavaScript</span><span>⚽</span
+          ><span>Frontend</span><span>🚀</span>
+        </div>
+      </div>
+
+      <section id="about" class="wrap">
+        <h2>Men haqimda</h2>
+        <p class="sub">Qisqacha o'zim haqimda.</p>
+
+        <div class="about">
+          <img
+            class="photo about-photo"
+            src="abuuu.png"
+            alt="Abdulloh"
+            loading="lazy"
+          />
+          <div>
+            <p class="about-text">
+              Salom! Ismim <b>Abdulloh</b>. Men dasturlashni o'rganyapman va
+              kelajakda professional dasturchi bo'lishni orzu qilaman.
+            </p>
+            <dl class="facts">
+              <div>
+                <dt>Maktab</dt>
+                <dd>🏫 67-maktab, 8-sinf</dd>
+              </div>
+              <div>
+                <dt>Hozir o'rganyapman</dt>
+                <dd>💻 HTML, CSS, JavaScript</dd>
+              </div>
+              <div>
+                <dt>Sevimli mashg'ulot</dt>
+                <dd>⚽ Futbol o'ynash</dd>
+              </div>
+              <div>
+                <dt>Orzu</dt>
+                <dd>🚀 Yaxshi dasturchi bo'lish</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h1>mening loyihalarim</h1>
+        <div class="loyuha-1">
+          <img
+            class="loyihalarim"
+            src="/Снимок экрана 2026-10-05 145626.png"
+            alt=""
+          />
+          <a target="_blank" href="https://project-delta-three-niolyfsvyh.vercel.app/"
+            >Ko`rish</a
+          >
+        </div>
+      </section>
+
+      <section id="family" class="wrap">
+        <h2>Mening oilam</h2>
+        <p class="sub">Mening eng katta qo'llab-quvvatlovchilarim.</p>
+
+        <div class="grid">
+          <figure class="card tilt-l">
+            <img src="onam.jpg" alt="Onam" loading="lazy" />
+            <figcaption>
+              <h3>Onam ❤️</h3>
+              <p>Eng mehribon insonim.</p>
+            </figcaption>
+          </figure>
+          <figure class="card tilt-r">
+            <img src="sing.jpg" alt="Singlim" loading="lazy" />
+            <figcaption>
+              <h3>Singlim 💚</h3>
+              <p>Mening aziz singlim.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="group" class="band">
+        <div class="wrap">
+          <h2>Mening guruhim</h2>
+          <p class="sub">Guruhimizdan esdalik suratlar.</p>
+
+          <div class="carousel-wrapper">
+            <button class="carousel-btn" id="prev" aria-label="Oldingi rasm">
+              ‹
+            </button>
+            <div class="carousel-window">
+              <div class="carousel" id="carousel">
+                <img src="/abdulloh.jpg" alt="Guruh rasmi 1" />
+                <img src="/abduqodir.jpg" alt="Guruh rasmi 2" loading="lazy" />
+                <img
+                  src="./abduraxmon.PNG"
+                  alt="Guruh rasmi 3"
+                  loading="lazy"
+                />
+                <img src="./allayar.PNG" alt="Guruh rasmi 4" loading="lazy" />
+                <img src="./islom.png" alt="Guruh rasmi 5" loading="lazy" />
+                <img src="./jahongir.png" alt="Guruh rasmi 6" loading="lazy" />
+                <img src="./karimbek.jpg" alt="Guruh rasmi 7" loading="lazy" />
+                <img
+                  src="./muhammadamin.png"
+                  alt="Guruh rasmi 8"
+                  loading="lazy"
+                />
+                <img
+                  src="./shoxrux photo.png"
+                  alt="Guruh rasmi 9"
+                  loading="lazy"
+                />
+                <img
+                  src="./nizomiddin.png"
+                  alt="Guruh rasmi 10"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <button class="carousel-btn" id="next" aria-label="Keyingi rasm">
+              ›
+            </button>
+          </div>
+          <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+          <p class="counter" id="counter" aria-live="polite"></p>
+          <div class="thumbs" id="thumbs"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="wrap contact">
+        <h2>Aloqa</h2>
+        <p class="big">Men bilan bog'laning</p>
+        <a
+          class="contact-link"
+          href="https://t.me/abdulloh-77"
+          target="_blank"
+          rel="noopener"
+          >📱 @abdulloh-77</a
+        >
+        <a class="contact-link" href="mailto:abdulloh@gmail.com"
+          >📧 abdulloh@gmail.com</a
+        >
+      </section>
+    </main>
+
+    <footer>
+      <div class="wordmark" aria-hidden="true">abdulloh</div>
+      <p>
+        © 2026 Abdulloh. Barcha huquqlar himoyalangan. Toshkent, O'zbekiston
+      </p>
+    </footer>
+
+    <script>
+      const carousel = document.getElementById("carousel");
+      const prev = document.getElementById("prev");
+      const next = document.getElementById("next");
+      const counter = document.getElementById("counter");
+      const bar = document.getElementById("bar");
+      const thumbs = document.getElementById("thumbs");
+      let index = 0;
+
+      // Har bir rasmni "slide" ichiga o'rab, orqasiga xiralashgan nusxasini qo'yamiz
+      const photos = [...carousel.querySelectorAll("img")];
+      photos.forEach((img, i) => {
+        const slide = document.createElement("div");
+        slide.className = "slide";
+        slide.style.setProperty("--src", `url("${img.getAttribute("src")}")`);
+        carousel.insertBefore(slide, img);
+        slide.appendChild(img);
+
+        const t = document.createElement("button");
+        t.className = "thumb";
+        t.setAttribute("aria-label", `${i + 1}-rasm`);
+        t.innerHTML = `<img src="${img.getAttribute("src")}" alt="" loading="lazy" />`;
+        t.addEventListener("click", () => {
+          index = i;
+          update();
+        });
+        thumbs.appendChild(t);
+      });
+      const total = photos.length;
+
+      function update() {
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+        counter.textContent = `${index + 1} / ${total}`;
+        bar.style.width = `${((index + 1) / total) * 100}%`;
+        prev.disabled = index === 0;
+        next.disabled = index === total - 1;
+        [...thumbs.children].forEach((t, i) =>
+          t.classList.toggle("active", i === index),
+        );
+      }
+
+      next.addEventListener("click", () => {
+        if (index < total - 1) {
+          index++;
+          update();
+        }
+      });
+      prev.addEventListener("click", () => {
+        if (index > 0) {
+          index--;
+          update();
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") next.click();
+        if (e.key === "ArrowLeft") prev.click();
+      });
+      update();
+
+      // Rasm topilmasa, buzuq belgi o'rniga fayl nomi yozilgan blok chiqadi
+      function markBroken(img) {
+        if (img.dataset.checked) return;
+        img.dataset.checked = "1";
+        const box = document.createElement("div");
+        box.className = img.className + " img-missing";
+        box.textContent = "Rasm topilmadi: " + img.getAttribute("src");
+        img.replaceWith(box);
+      }
+      document.querySelectorAll("img").forEach((img) => {
+        if (img.complete && img.naturalWidth === 0) markBroken(img);
+        img.addEventListener("error", () => markBroken(img));
+      });
+    </script>
+  </body>
+</html>

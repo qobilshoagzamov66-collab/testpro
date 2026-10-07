@@ -1,0 +1,1090 @@
+:root {
+  --chalk: #f4f1e8;
+  --paper: #ffffff;
+  --pitch: #0b3a29;
+  --pitch-2: #0f4a34;
+  --ball: #ff6a2b;
+  --text: #13211a;
+  --muted: #5b685f;
+  --line: #d8d4c6;
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --body: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+body {
+  font-family: var(--body);
+  background: var(--chalk);
+  color: var(--text);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+:focus-visible {
+  outline: 3px solid var(--ball);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+section.wrap {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  line-height: 1.02;
+}
+h2 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  color: var(--pitch);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.sub {
+  color: var(--muted);
+  margin-bottom: 44px;
+  font-size: 1.05rem;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--pitch);
+  border-bottom: 3px solid var(--ball);
+}
+nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.logo {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--chalk);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+nav ul a {
+  color: #b9d3c5;
+  font-weight: 500;
+  transition: 0.2s;
+}
+nav ul a:hover {
+  color: var(--ball);
+}
+
+/* Hero: mowed pitch + center circle */
+.hero {
+  position: relative;
+  color: var(--chalk);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 78% 50%,
+      transparent 0 190px,
+      rgba(255, 255, 255, 0.22) 190px 193px,
+      transparent 193px
+    ),
+    linear-gradient(
+      90deg,
+      transparent calc(78% - 1.5px),
+      rgba(255, 255, 255, 0.22) calc(78% - 1.5px) calc(78% + 1.5px),
+      transparent calc(78% + 1.5px)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--pitch) 0 90px,
+      var(--pitch-2) 90px 180px
+    );
+}
+.hero-inner {
+  min-height: 86vh;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.tag {
+  display: inline-block;
+  background: var(--ball);
+  color: #fff;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-bottom: 22px;
+  font-size: 0.95rem;
+}
+.hero h1 {
+  font-size: clamp(3.4rem, 10vw, 7.6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin-bottom: 24px;
+}
+.lead {
+  color: #cfe3d8;
+  font-size: 1.2rem;
+  max-width: 470px;
+  margin-bottom: 32px;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+.btn:hover {
+  transform: translateY(-3px);
+}
+.primary {
+  background: var(--ball);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(255, 106, 43, 0.35);
+}
+.ghost {
+  border: 2px solid var(--chalk);
+  color: var(--chalk);
+}
+.ghost:hover {
+  background: var(--chalk);
+  color: var(--pitch);
+}
+
+.hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.jersey {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(16rem, 32vw, 26rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 3px rgba(244, 241, 232, 0.45);
+  user-select: none;
+}
+.photo {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 170px 170px 20px 20px;
+  border: 5px solid var(--chalk);
+  box-shadow: 14px 14px 0 var(--ball);
+}
+
+/* Marquee */
+.marquee {
+  background: var(--ball);
+  color: #fff;
+  overflow: hidden;
+  border-block: 3px solid var(--pitch);
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-flex;
+  gap: 40px;
+  padding: 14px 0;
+  animation: scroll 28s linear infinite;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+.marquee-track span {
+  flex-shrink: 0;
+}
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* About */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 56px;
+  align-items: center;
+}
+.about-photo {
+  margin: auto;
+  box-shadow: -14px 14px 0 var(--pitch);
+  border-radius: 20px;
+  border-color: var(--paper);
+}
+.about-text {
+  font-size: 1.15rem;
+  max-width: 56ch;
+}
+.facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 28px;
+}
+.facts div {
+  background: var(--paper);
+  border: 2px solid var(--pitch);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 5px 5px 0 var(--pitch);
+  transition: 0.2s;
+}
+.facts div:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--ball);
+}
+.facts dt {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.facts dd {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Family: polaroids */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 800px;
+}
+.card {
+  background: var(--paper);
+  padding: 14px 14px 10px;
+  box-shadow: 0 18px 40px rgba(11, 58, 41, 0.18);
+  transition: 0.3s;
+}
+.tilt-l {
+  transform: rotate(-2.5deg);
+}
+.tilt-r {
+  transform: rotate(2.5deg);
+  margin-top: 30px;
+}
+.card:hover {
+  transform: rotate(0) scale(1.03);
+}
+.card img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+.card figcaption {
+  padding: 14px 4px 6px;
+}
+.card h3 {
+  font-size: 1.5rem;
+  color: var(--pitch);
+}
+.card p {
+  color: var(--muted);
+}
+
+/* Group band */
+.band {
+  background: var(--pitch);
+  color: var(--chalk);
+  padding: 100px 0;
+}
+.band h2 {
+  color: var(--chalk);
+}
+.band .sub {
+  color: #b9d3c5;
+}
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.carousel-window {
+  width: min(860px, 100%);
+  overflow: hidden;
+  border-radius: 18px;
+  border: 5px solid var(--chalk);
+  box-shadow: 12px 12px 0 var(--ball);
+  background: #000;
+}
+.carousel {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.carousel img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+.carousel-btn {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border: 2px solid var(--chalk);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--chalk);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+.carousel-btn:hover:not(:disabled) {
+  background: var(--ball);
+  border-color: var(--ball);
+}
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.progress {
+  max-width: 860px;
+  height: 6px;
+  margin: 34px auto 0;
+  background: rgba(244, 241, 232, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.progress span {
+  display: block;
+  height: 100%;
+  background: var(--ball);
+  transition: width 0.4s;
+}
+.counter {
+  text-align: center;
+  color: #b9d3c5;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+}
+.contact .big {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin-bottom: 28px;
+}
+.contact-link {
+  display: block;
+  width: fit-content;
+  margin: 12px auto;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  color: var(--pitch);
+  border-bottom: 4px solid var(--ball);
+  transition: 0.2s;
+}
+.contact-link:hover {
+  color: var(--ball);
+}
+
+footer {
+  text-align: center;
+  color: #b9d3c5;
+  background: var(--pitch);
+  padding: 28px 20px;
+  font-size: 0.9rem;
+  border-top: 3px solid var(--ball);
+}
+
+@media (max-width: 760px) {
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+  nav ul {
+    justify-content: center;
+    gap: 16px;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .buttons {
+    justify-content: center;
+  }
+  .hero-image {
+    margin-top: 20px;
+  }
+  .about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .facts {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .tilt-r {
+    margin-top: 0;
+  }
+  .carousel img {
+    height: 300px;
+  }
+  .carousel-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 500px) {
+  section.wrap {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .band {
+    padding: 70px 0;
+  }
+  .carousel-wrapper {
+    gap: 6px;
+  }
+  .carousel img {
+    height: 240px;
+  }
+  .carousel-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+/* ===== v3: rasmlar + kuchliroq uslub ===== */
+.photo,
+.card img {
+  object-position: center 18%;
+}
+.img-missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--pitch) 0 14px,
+    var(--pitch-2) 14px 28px
+  );
+  color: var(--chalk);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.card .img-missing {
+  height: 340px;
+}
+
+/* Karusel: butun rasm ko'rinadi, kesilmaydi */
+.carousel-window {
+  aspect-ratio: 16 / 10;
+}
+.carousel {
+  height: 100%;
+}
+.carousel .slide {
+  flex: 0 0 100%;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+.carousel .slide::before {
+  content: "";
+  position: absolute;
+  inset: -30px;
+  background: var(--src) center / cover;
+  filter: blur(26px) brightness(0.5);
+}
+.carousel .slide img {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.carousel .slide .img-missing {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  justify-content: safe center;
+  padding: 18px 4px 8px;
+  margin-top: 6px;
+}
+.thumb {
+  flex: 0 0 auto;
+  width: 84px;
+  height: 60px;
+  padding: 0;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+  opacity: 0.55;
+  transition: 0.2s;
+}
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.thumb:hover {
+  opacity: 0.9;
+}
+.thumb.active {
+  opacity: 1;
+  border-color: var(--ball);
+  transform: translateY(-4px);
+}
+
+/* Hero: yorqinroq */
+.hero h1 {
+  text-shadow: 6px 6px 0 rgba(0, 0, 0, 0.28);
+}
+.tag {
+  transform: rotate(-2deg);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.jersey {
+  -webkit-text-stroke: 4px rgba(244, 241, 232, 0.55);
+}
+.photo {
+  box-shadow:
+    16px 16px 0 var(--ball),
+    16px 16px 0 3px var(--chalk);
+}
+.sticker {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -8px;
+  top: 6%;
+  z-index: 3;
+  background: var(--chalk);
+  border-radius: 50%;
+  box-shadow: 5px 5px 0 var(--ball);
+  animation: spin 18s linear infinite;
+}
+.sticker text {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 17px;
+  fill: var(--pitch);
+}
+.sticker .sticker-ball {
+  font-size: 44px;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Marquee kattaroq */
+.marquee-track {
+  font-size: 2.1rem;
+  gap: 56px;
+  padding: 18px 0;
+}
+
+/* Sarlavhalar: tagida chiziq */
+h2 {
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 12px;
+  background: var(--ball);
+  z-index: -1;
+  opacity: 0.85;
+  transform: skewX(-12deg);
+}
+.band h2::after {
+  background: var(--ball);
+}
+.band h2 {
+  z-index: 0;
+}
+
+/* Polaroid yelim lentasi */
+.card {
+  position: relative;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 90px;
+  height: 28px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(255, 106, 43, 0.75);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* Kartochkalar */
+.facts div {
+  border-width: 3px;
+}
+.facts dd {
+  font-family: var(--display);
+  font-size: 1.2rem;
+}
+
+/* Aloqa tugmalari */
+.contact-link {
+  border: 3px solid var(--pitch);
+  border-radius: 999px;
+  padding: 12px 34px;
+  background: var(--paper);
+  box-shadow: 6px 6px 0 var(--pitch);
+  border-bottom-width: 3px;
+  margin: 18px auto;
+}
+.contact-link:hover {
+  color: var(--text);
+  background: var(--ball);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--pitch);
+}
+
+/* Footer: ulkan yozuv */
+footer {
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+.wordmark {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(4rem, 19vw, 15rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(244, 241, 232, 0.35);
+  margin-bottom: 18px;
+  user-select: none;
+}
+
+@media (max-width: 760px) {
+  .sticker {
+    width: 110px;
+    height: 110px;
+    right: 4px;
+    top: -10px;
+  }
+  .carousel-window {
+    aspect-ratio: 4 / 3;
+  }
+  .thumb {
+    width: 64px;
+    height: 48px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sticker {
+    animation: none;
+  }
+}
+
+/* ===== v4: ancha kuchliroq ===== */
+.scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0;
+  background: var(--ball);
+  z-index: 200;
+}
+nav ul a {
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+nav ul a:hover {
+  color: var(--pitch);
+  background: var(--chalk);
+}
+nav ul a.active {
+  color: #fff;
+  background: var(--ball);
+}
+
+/* Hero: kirish animatsiyasi (faqat bir marta) */
+.hero-text > * {
+  animation: rise 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.hero-text > :nth-child(2) {
+  animation-delay: 0.1s;
+}
+.hero-text > :nth-child(3) {
+  animation-delay: 0.2s;
+}
+.hero-text > :nth-child(4) {
+  animation-delay: 0.3s;
+}
+.hero-image .photo {
+  animation: pop 0.8s 0.25s cubic-bezier(0.2, 1.3, 0.4, 1) both;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-6deg);
+  }
+}
+.hero h1 {
+  font-size: clamp(3.8rem, 12vw, 9rem);
+  line-height: 0.92;
+}
+.hero {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0 40px,
+      rgba(255, 255, 255, 0.18) 40px 43px,
+      transparent 43px
+    ),
+    radial-gradient(
+      circle at 78% 50%,
+      transparent 0 190px,
+      rgba(255, 255, 255, 0.25) 190px 194px,
+      transparent 194px
+    ),
+    linear-gradient(
+      90deg,
+      transparent calc(78% - 2px),
+      rgba(255, 255, 255, 0.25) calc(78% - 2px) calc(78% + 2px),
+      transparent calc(78% + 2px)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--pitch) 0 90px,
+      var(--pitch-2) 90px 180px
+    );
+}
+.btn {
+  border: 3px solid transparent;
+}
+.primary {
+  border-color: #fff;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35);
+}
+.primary:hover {
+  box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.35);
+  transform: translate(-3px, -3px);
+}
+
+/* Ikkinchi lenta teskari yo'nalishda */
+.marquee-rev {
+  background: var(--pitch);
+  color: var(--chalk);
+  border-top: 0;
+}
+.marquee-rev .marquee-track {
+  animation-direction: reverse;
+  font-size: 1.5rem;
+  animation-duration: 34s;
+}
+.marquee-rev .marquee-track span:nth-child(even) {
+  color: var(--ball);
+}
+
+/* Tablo */
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 70px;
+  background: var(--pitch);
+  border-radius: 20px;
+  padding: 0;
+  max-width: 1060px;
+  overflow: hidden;
+  box-shadow: 10px 10px 0 var(--ball);
+  border: 4px solid var(--pitch);
+}
+.score {
+  text-align: center;
+  padding: 26px 10px;
+  color: var(--chalk);
+  border-right: 2px dashed rgba(244, 241, 232, 0.25);
+}
+.score:last-child {
+  border-right: 0;
+}
+.score b {
+  display: block;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(3rem, 8vw, 5.4rem);
+  line-height: 1;
+  color: var(--ball);
+}
+.score span {
+  color: #b9d3c5;
+  font-weight: 500;
+}
+
+/* Bo'limlar orasi: qiyshaygan chegaralar */
+.band {
+  clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%);
+  padding: calc(100px + 5vw) 0;
+  margin: -2vw 0;
+  position: relative;
+  z-index: 1;
+}
+#family {
+  padding-bottom: calc(100px + 3vw);
+}
+
+/* Men haqimda: kuchliroq */
+.about-text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+.about-text b {
+  background: var(--ball);
+  color: #fff;
+  padding: 0 8px;
+  border-radius: 6px;
+}
+.facts div {
+  padding: 20px 22px;
+}
+.facts div:nth-child(odd):hover {
+  transform: translate(-3px, -3px) rotate(-1deg);
+}
+.facts div:nth-child(even):hover {
+  transform: translate(-3px, -3px) rotate(1deg);
+}
+
+/* Polaroidlar kattaroq */
+.grid {
+  max-width: 920px;
+  gap: 56px;
+}
+.card img {
+  height: 400px;
+}
+.card h3 {
+  font-size: 1.8rem;
+}
+
+/* Karusel */
+.carousel-window {
+  border-width: 6px;
+  box-shadow: 16px 16px 0 var(--ball);
+}
+.carousel-btn {
+  width: 62px;
+  height: 62px;
+  border-width: 3px;
+  background: var(--pitch-2);
+}
+
+/* Aloqa */
+.contact .big {
+  font-size: clamp(2.2rem, 7vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--pitch);
+}
+
+@media (max-width: 760px) {
+  .scoreboard {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 50px;
+  }
+  .score:nth-child(2) {
+    border-right: 0;
+  }
+  .score:nth-child(-n + 2) {
+    border-bottom: 2px dashed rgba(244, 241, 232, 0.25);
+  }
+  .card img {
+    height: 320px;
+  }
+  .hero h1 {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-text > *,
+  .hero-image .photo {
+    animation: none;
+  }
+}
+
+/* ===== v5: Oila bo'limi tuzatildi ===== */
+#family .grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+  max-width: 880px;
+  margin: 10px auto 0;
+  align-items: start;
+}
+#family .card {
+  transform: none;
+  rotate: -2deg;
+  margin: 0;
+  padding: 16px 16px 12px;
+  border-radius: 6px;
+  transition:
+    rotate 0.3s,
+    scale 0.3s,
+    box-shadow 0.3s;
+}
+#family .card.tilt-r {
+  rotate: 2deg;
+  margin-top: 36px;
+}
+#family .card:hover {
+  rotate: 0deg;
+  scale: 1.04;
+  box-shadow: 14px 14px 0 var(--ball);
+}
+#family .card img,
+#family .card .img-missing {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 20%;
+  display: flex;
+  border-radius: 2px;
+}
+#family .card figcaption {
+  padding: 16px 4px 8px;
+  text-align: center;
+}
+#family .card h3 {
+  font-size: 1.9rem;
+  margin-bottom: 4px;
+}
+#family .card p {
+  font-size: 1.05rem;
+}
+
+@media (max-width: 760px) {
+  #family .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 44px;
+    max-width: 360px;
+  }
+  #family .card.tilt-r {
+    margin-top: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #family .card {
+    transition: none;
+  }
+}
+.loyihalarim{
+  width: 450px;
+  box-shadow: orange;
+  transition: 0.5s;
+}
+.loyihalarim:hover{
+  transform: translateY(15px);
+   box-shadow: 10px 10px 19px orange;
+  transition: 0.5s;
+
+}
+.loyuha-1{
+  display: flex;
+}
