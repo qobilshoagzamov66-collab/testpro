@@ -136,8 +136,8 @@
             <h1>bu loyihada gullar bor <br />misol uchun atirgul</h1>
           </div>
           <div class="loyuha-2">
-            <img class="car" src="/f.png" alt="" />
-            <a class="kor" href="">Korish</a>
+            <img class="car" src="/f.png" alt=""  />
+            <a class="kor" href="http://127.0.0.1:5501/index.html">Korish</a>
             <p class="p">
               Bu yerda sports <br />
               cars bor
@@ -216,7 +216,7 @@
                 />
               </div>
             </div>
-            <button class="carousel-btn" id="next" aria-label="Keyingi rasm">
+            <button class="carousel-btn" id="next" aria-label="Keyingi rasm" style="margin-left: 45px;">
               ›
             </button>
           </div>
@@ -249,78 +249,6 @@
       </p>
     </footer>
 
-    <script>
-      const carousel = document.getElementById("carousel");
-      const prev = document.getElementById("prev");
-      const next = document.getElementById("next");
-      const counter = document.getElementById("counter");
-      const bar = document.getElementById("bar");
-      const thumbs = document.getElementById("thumbs");
-      let index = 0;
-
-      // Har bir rasmni "slide" ichiga o'rab, orqasiga xiralashgan nusxasini qo'yamiz
-      const photos = [...carousel.querySelectorAll("img")];
-      photos.forEach((img, i) => {
-        const slide = document.createElement("div");
-        slide.className = "slide";
-        slide.style.setProperty("--src", `url("${img.getAttribute("src")}")`);
-        carousel.insertBefore(slide, img);
-        slide.appendChild(img);
-
-        const t = document.createElement("button");
-        t.className = "thumb";
-        t.setAttribute("aria-label", `${i + 1}-rasm`);
-        t.innerHTML = `<img src="${img.getAttribute("src")}" alt="" loading="lazy" />`;
-        t.addEventListener("click", () => {
-          index = i;
-          update();
-        });
-        thumbs.appendChild(t);
-      });
-      const total = photos.length;
-
-      function update() {
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-        counter.textContent = `${index + 1} / ${total}`;
-        bar.style.width = `${((index + 1) / total) * 100}%`;
-        prev.disabled = index === 0;
-        next.disabled = index === total - 1;
-        [...thumbs.children].forEach((t, i) =>
-          t.classList.toggle("active", i === index),
-        );
-      }
-
-      next.addEventListener("click", () => {
-        if (index < total - 1) {
-          index++;
-          update();
-        }
-      });
-      prev.addEventListener("click", () => {
-        if (index > 0) {
-          index--;
-          update();
-        }
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowRight") next.click();
-        if (e.key === "ArrowLeft") prev.click();
-      });
-      update();
-
-      // Rasm topilmasa, buzuq belgi o'rniga fayl nomi yozilgan blok chiqadi
-      function markBroken(img) {
-        if (img.dataset.checked) return;
-        img.dataset.checked = "1";
-        const box = document.createElement("div");
-        box.className = img.className + " img-missing";
-        box.textContent = "Rasm topilmadi: " + img.getAttribute("src");
-        img.replaceWith(box);
-      }
-      document.querySelectorAll("img").forEach((img) => {
-        if (img.complete && img.naturalWidth === 0) markBroken(img);
-        img.addEventListener("error", () => markBroken(img));
-      });
-    </script>
+    
   </body>
 </html>
